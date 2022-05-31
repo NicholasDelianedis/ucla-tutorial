@@ -156,8 +156,10 @@ class GameView(arcade.View):
                     self.target_manager.remove_target(target)
                     explosion = ExplosionMaker(self.window.get_size(), target.position, target.get_color())
                     self.explosion_list.append(explosion)
-                    self.score += 1
+                    self.score += 5
                     arcade.play_sound(self.hit_sound)
+                else:
+                    self.score -= 1
 
             if len(targets_hit) > 0:
                 laser.remove_from_sprite_lists()
